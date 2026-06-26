@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { FiUploadCloud, FiCheck, FiInfo, FiSliders, FiCalendar, FiCompass, FiLayers, FiActivity, FiUser } from 'react-icons/fi';
+import { supabase } from '../supabaseClient';
 
 export default function CustomDesign() {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
 
   const [designSpecs, setDesignSpecs] = useState({
     name: '',
@@ -26,13 +29,62 @@ export default function CustomDesign() {
     }
   };
 
-  const handleCustomFormSubmit = (e) => {
+  const handleCustomFormSubmit = async (e) => {
     e.preventDefault();
-    console.log("Custom Design Package Submitted:", {
-      specs: designSpecs,
-      fileName: attachedFile ? attachedFile.name : 'No image attached'
-    });
-    setIsSubmitted(true);
+    setIsUploading(true);
+
+    let uploadedImageUrl = 'No image attached';
+
+    try {
+      // 1. If a file is attached, upload it directly to Supabase Storage
+      if (attachedFile) {
+        // Create a unique file name to avoid collisions
+        const fileExt = attachedFile.name.split('.').pop();
+        const fileName = `custom-${Date.now()}.${fileExt}`;
+        const filePath = `uploads/${fileName}`;
+
+        // Upload binary to your public bucket (e.g., 'product-images')
+        const { error: uploadError } = await supabase.storage
+          .from('product-media')
+          .upload(filePath, attachedFile);
+
+        if (uploadError) throw uploadError;
+
+        // Get the public CDN URL of the uploaded image
+        const { data } = supabase.storage
+          .from('product-media')
+          .getPublicUrl(filePath);
+
+        uploadedImageUrl = data.publicUrl;
+      }
+
+      // 2. Construct the clean WhatsApp message incorporating the live image link
+      const whatsappMessage = `🧵 *TassarWeavers - Custom Design Proposal* 🧵\n\n` +
+        `👤 *Name:* ${designSpecs.name}\n` +
+        `📞 *Phone:* ${designSpecs.phone}\n` +
+        `🎨 *Colors:* ${designSpecs.colors}\n` +
+        `💰 *Budget Baseline:* ₹${Number(designSpecs.budget).toLocaleString('en-IN')}\n` +
+        `📅 *Delivery Date:* ${designSpecs.timeline}\n\n` +
+        `🖼️ *Design Image Link:* ${uploadedImageUrl}\n\n` +
+        `📝 *Design Requirements:* \n${designSpecs.description}`;
+
+      // 3. Safely encode URL message payload string
+      const encodedMessage = encodeURIComponent(whatsappMessage);
+
+      // 4. Define target workspace contact number
+      const whatsappNumber = "919381725486";
+
+      // 5. Fire native browser redirect routing
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodedMessage}`, '_blank');
+
+      // 6. Complete wizard tracking view sequence
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error('Error handling custom design proposal:', error.message);
+      alert('Failed to upload image sketch template. Please try again.');
+    } finally {
+      setIsUploading(false);
+    }
   };
 
   return (
@@ -45,7 +97,6 @@ export default function CustomDesign() {
       {/* SECTION HEADER OVERVIEW */}
       <div className="mb-12 text-left border-b border-tassar-earth/30 pb-6">
         <span className="text-xs uppercase tracking-[0.2em] text-tassar-madderRed font-bold block">✦ BESPOKE WEAVING CONSULTATION</span>
-        {/* Updated Heading per your exact instruction */}
         <h1 className="text-4xl md:text-6xl font-display text-tassar-earth font-medium mt-1">Custom Design</h1>
       </div>
 
@@ -60,7 +111,7 @@ export default function CustomDesign() {
             className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start"
           >
 
-            {/* COLUMN 1: THE ARTISAN WORKSHOP GUIDE BOX (Fills the plain emptiness) */}
+            {/* COLUMN 1: THE ARTISAN WORKSHOP GUIDE BOX */}
             <div className="lg:col-span-4 space-y-6">
               <div className="bg-tassar-earth text-tassar-cream p-6 border border-tassar-earth shadow-md flex flex-col justify-between">
                 <div>
@@ -207,6 +258,7 @@ export default function CustomDesign() {
                     type="file" accept="image/*" id="motif-file-input"
                     onChange={handleFileChange}
                     className="absolute inset-0 w-full h-full opacity-0 cursor-pointer z-20"
+                    disabled={isUploading}
                   />
 
                   <div className="p-3 rounded-full bg-white text-tassar-deepGold text-2xl mb-3 border border-tassar-raw/30 shadow-sm">
@@ -230,9 +282,10 @@ export default function CustomDesign() {
               {/* MASTER SUBMIT GATE ACTION TRIGGER */}
               <button
                 type="submit"
-                className="w-full mt-4 bg-tassar-earth text-tassar-cream py-4 text-xs font-bold tracking-widest uppercase hover:bg-tassar-madderRed transition-colors duration-300 shadow-md"
+                disabled={isUploading}
+                className="w-full mt-4 bg-tassar-earth text-tassar-cream py-4 text-xs font-bold tracking-widest uppercase hover:bg-tassar-madderRed transition-colors duration-300 shadow-md disabled:bg-tassar-raw/60"
               >
-                SUBMIT CUSTOM DESIGN PROPOSAL
+                {isUploading ? 'UPLOADING SKETCH TO GALLERY...' : 'SUBMIT CUSTOM DESIGN PROPOSAL'}
               </button>
 
             </form>
@@ -263,7 +316,7 @@ export default function CustomDesign() {
                 SUBMIT ANOTHER PROPOSAL
               </button>
 
-              <Link path to="/">
+              <Link to="/">
                 <button className="bg-tassar-earth text-tassar-cream py-3 px-6 text-xs font-bold tracking-widest uppercase hover:bg-tassar-madderRed transition-colors duration-300">
                   RETURN TO HOME
                 </button>
