@@ -1,25 +1,19 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+module.exports = {
   theme: {
     extend: {
       colors: {
-        tassar: {
-          raw: '#E6D5B8',       // Natural organic golden-beige of Tassar silk
-          earth: '#4A3E3D',     // Deep rich earthy brown for readable text
-          deepGold: '#C5A059',  // Accent gold for borders and highlights
-          madderRed: '#8B2635', // Premium traditional dye color
-          cream: '#FBF9F5',     // Elegant, clean background spacing
-        }
+        mart: {
+          dark: '#0A1A1A',     // Replace with your actual hex
+          emerald: '#10B981',  // Replace with your actual hex
+          stone: '#F5F5F4',    // Replace with your actual hex
+          soft: '#E7E5E4',     // Replace with your actual hex
+        },
       },
       fontFamily: {
-        display: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
-      }
+        display: ['YourDisplayFont', 'serif'],
+        sans: ['YourSansFont', 'sans-serif'],
+      },
     },
   },
-  plugins: [],
 }
