@@ -30,7 +30,7 @@ export default function Navbar() {
           <div className="flex-shrink-0 max-w-[50%] md:max-w-none">
             <Link 
               to="/" 
-              className="font-display text-base sm:text-lg lg:text-xl font-bold tracking-[0.12em] lg:tracking-[0.15em] text-black hover:text-tassar-madderRed transition-colors block md:inline"
+              className="font-display text-base sm:text-lg lg:text-xl font-bold tracking-[0.12em] lg:tracking-[0.10em] text-black hover:text-tassar-madderRed transition-colors block md:inline"
             >
               SIDDESHWARA <span className="text-tassar-deepGold font-light block lg:inline">RURAL MART</span>
             </Link>
