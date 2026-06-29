@@ -480,7 +480,7 @@ export default function Home() {
 
               <div className="flex items-start gap-3 py-0.5 leading-relaxed text-tassar-cream/80">
                 <FiMapPin className="text-tassar-raw mt-1 shrink-0" />
-                <span>Manikanta Tassar Sarees, Tassar Colony, Mahadevpur, Jayashankar Bhupalpally, Telangana - 505504</span>
+                <span>Siddeshwara Handloom Cooperative Society, Tassar Colony, Mahadevpur, Jayashankar Bhupalpally, Telangana - 505504</span>
               </div>
             </div>
           </div>
