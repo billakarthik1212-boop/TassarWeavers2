@@ -15,7 +15,6 @@ export default function Home() {
     const syncDatabaseBanners = async () => {
       const cloudHomeLayout = await getHomeLayoutSettings();
       if (cloudHomeLayout) {
-        // Kept direct mappings to align natively with rendering arrays below
         setLayout({
           curatedTitle: cloudHomeLayout.curated_title,
           curatedSubtitle: cloudHomeLayout.curated_subtitle,
@@ -80,7 +79,6 @@ export default function Home() {
     { q: "Can I request modifications to color tones?", a: "Absolutely. While ready pieces are shipped immediately, you can use our dedicated Custom Design page to submit request guidelines if you want an entirely custom color run or specific length changes." }
   ];
 
-  // REDIRECTION TARGET MAPPING UTILITIES - Fixed routing to seamlessly filter categories
   const navigateToShopProduct = (productId) => {
     if (!productId) navigate('/shop');
     else navigate('/shop', { state: { highlightProductId: Number(productId) } });
@@ -90,7 +88,6 @@ export default function Home() {
     if (!categoryName) {
       navigate('/shop');
     } else {
-      // Passes the clean variable state package down to Shop.jsx's active interceptor hooks
       navigate('/shop', { state: { autoFilterCategory: categoryName } });
     }
   };
@@ -200,7 +197,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 2. DYNAMIC ADMIN-DRIVEN CURATED CATALOG SHOWCASE */}
+      {/* 2. CURATED CATALOG SHOWCASE */}
       <section className="pt-20 pb-16 px-6 bg-white border-t border-tassar-raw/20 overflow-hidden text-left">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-4">
@@ -240,7 +237,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 3. DYNAMIC ADMIN-DRIVEN NEW ARRIVALS SHOWCASE */}
+      {/* 3. NEW ARRIVALS SHOWCASE */}
       <section className="py-16 px-6 bg-tassar-earth text-tassar-cream border-b border-tassar-raw/20 overflow-hidden text-left">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
@@ -311,7 +308,7 @@ export default function Home() {
           <span className="text-xs uppercase tracking-widest text-tassar-madderRed font-bold mb-2 block">✦ Preserving Heritage</span>
           <h3 className="text-2xl md:text-4xl font-display text-tassar-earth leading-tight">No middle channels. Just true weavers connecting directly with your home.</h3>
           <p className="mt-4 text-xs md:text-sm text-tassar-earth font-light leading-relaxed">
-            Traditional village artisans often lose major revenue shares to heavy e-commerce agents and wholesale distributors. TassarWeavers establishes a direct bridge, ensuring fair sustainability practices and unmatched authentic item validation.
+            Traditional village artisans often lose major revenue shares to heavy e-commerce agents and wholesale distributors. Siddeshwara Rural Mart establishes a direct bridge, ensuring fair sustainability practices and unmatched authentic item validation.
           </p>
         </div>
       </section>
@@ -322,7 +319,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4 border-b border-tassar-raw/20 pb-8">
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-tassar-madderRed font-bold block">✦ UNCOMPROMISING STANDARDS</span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold text-black mt-2">Why TassarWeavers</h2>
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-black mt-2">Why Us</h2>
             </div>
           </div>
 
@@ -405,7 +402,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 6. INQUIRIES CLARIFIED (FAQ Accordion Panel Layout) */}
+      {/* 6. FAQ ACCORDION PANEL LAYOUT */}
       <section className="py-20 px-6 bg-tassar-cream/40 overflow-hidden text-left border-b border-tassar-raw/20">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -449,12 +446,16 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ========================================================================= */}
       {/* 7. HIGH-END RESPONSIVE EDITORIAL FOOTER SECTION */}
+      {/* ========================================================================= */}
       <footer className="bg-tassar-earth text-tassar-cream pt-16 pb-8 px-6 border-t border-tassar-raw/20 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 pb-12 border-b border-white/10">
+          
+          {/* Left Block: Contact Details */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-6 text-left">
             <div>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-tassar-raw block mb-1">TassarWeavers</span>
+              <span className="text-[10px] uppercase font-mono tracking-widest text-tassar-raw block mb-1">SIDDESHWARA RURAL MART</span>
               <h2 className="font-display text-2xl md:text-3xl font-medium tracking-wide text-white">Get in Touch</h2>
               <div className="h-[2px] w-12 bg-tassar-deepGold mt-2" />
             </div>
@@ -466,7 +467,7 @@ export default function Home() {
               </a>
 
               <a
-                href="https://wa.me/919505610080?text=Hello%20TassarWeavers,%20I'd%20like%20to%20inquire%20about%20your%20handloom%20masterpieces."
+                href="https://wa.me/919505610080?text=Hello%20Siddeshwara%20Rural%20Mart,%20I'd%20like%20to%20inquire%20about%20your%20handloom%20masterpieces."
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5 text-tassar-deepGold font-medium tracking-wide underline underline-offset-4 decoration-tassar-deepGold/40"
               >
@@ -486,20 +487,22 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Right Block: Live Google Maps Frame Embed */}
           <div className="lg:col-span-7 w-full h-[240px] sm:h-[280px] bg-white/5 border border-white/10 relative shadow-md">
             <iframe
               title="SIDDESWARA HANDLOOM COOPERATIVE SOCIETY Location Map"
-              src=
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123547890123!2d79.9142103!3d18.7365123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQ0JzExLjQiTiA3OcKwNTQnNTEuMiJF!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
               className="w-full h-full border-0 opacity-85 invert-[0.92] hue-rotate-[185deg] brightness-[0.88] contrast-[1.12]"
-              allowFullScreen="https://maps.app.goo.gl/DTMm9SU7Pk5GQ3u67"
+              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
         </div>
 
+        {/* Footer Subtext Bar */}
         <div className="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] font-mono tracking-wider text-tassar-raw">
-          <p>© 2026 TassarWeavers - Handcrafted with care.</p>
+          <p>© 2026 Siddeshwara Rural Mart - Handcrafted with care.</p>
           <Link
             to="/admin/dashboard"
             className="hover:text-tassar-madderRed transition-colors font-bold border-b border-transparent hover:border-tassar-madderRed pb-0.5 uppercase"
@@ -508,6 +511,7 @@ export default function Home() {
           </Link>
         </div>
       </footer>
+      {/* ========================================================================= */}
 
     </motion.div>
   );
