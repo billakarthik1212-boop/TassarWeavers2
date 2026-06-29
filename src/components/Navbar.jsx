@@ -8,7 +8,7 @@ export default function Navbar() {
   const location = useLocation();
   const { cartItems } = useCart();
 
-  // Calculate total count of items in the cart
+  // Calculate total count of items in the cart safely
   const totalCartItemsCount = cartItems?.reduce((acc, item) => acc + (item.quantity || 0), 0) || 0;
 
   const navigationLinks = [
@@ -94,7 +94,7 @@ export default function Navbar() {
 
       {/* MOBILE DROPDOWN INTERFACE */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-tassar-raw/30 shadow-inner px-4 pt-2 pb-6 space-y-2">
+        <div className="absolute left-0 right-0 top-full md:hidden bg-white dark:bg-white border-b border-tassar-raw/30 shadow-lg px-4 pt-2 pb-6 space-y-2 z-50">
           {navigationLinks.map((link) => (
             <Link
               key={link.name}
@@ -103,7 +103,7 @@ export default function Navbar() {
               className={`block px-3 py-3 text-sm tracking-widest uppercase font-bold text-left border-b border-tassar-cream last:border-0 transition-all ${
                 isActivePath(link.path) 
                   ? 'text-tassar-madderRed bg-tassar-cream/40 pl-5' 
-                  : 'text-black'
+                  : 'text-black dark:text-black'
               }`}
             >
               {link.name}
