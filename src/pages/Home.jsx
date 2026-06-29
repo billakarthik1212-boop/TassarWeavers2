@@ -480,7 +480,7 @@ export default function Home() {
 
               <div className="flex items-start gap-3 py-0.5 leading-relaxed text-tassar-cream/80">
                 <FiMapPin className="text-tassar-raw mt-1 shrink-0" />
-                <span>Siddeshwara Handloom Cooperative Society, Tassar Colony, Mahadevpur, Jayashankar Bhupalpally, Telangana - 505504</span>
+                <span>Manikanta Tassar Sarees, Tassar Colony, Mahadevpur, Jayashankar Bhupalpally, Telangana - 505504</span>
               </div>
             </div>
           </div>
@@ -489,7 +489,7 @@ export default function Home() {
           <div className="lg:col-span-7 w-full h-[240px] sm:h-[280px] bg-white/5 border border-white/10 relative shadow-md">
             <iframe
               title="SIDDESWARA HANDLOOM COOPERATIVE SOCIETY Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.123547890123!2d79.9142103!3d18.7365123!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTjCsDQ0JzExLjQiTiA3OcKwNTQnNTEuMiJF!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.0531584988944!2d79.97562377598006!3d18.733316683262657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a32f1e51683ba73%3A0x38b673fbe9f0c279!2sSIDDESWARA%20HANDLOOM%20COOPERATIVE%20SOCIETY!5e0!3m2!1sen!2sin!4v1719660000000!5m2!1sen!2sin"
               className="w-full h-full border-0 opacity-85 invert-[0.92] hue-rotate-[185deg] brightness-[0.88] contrast-[1.12]"
               allowFullScreen=""
               loading="lazy"
