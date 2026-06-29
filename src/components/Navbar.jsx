@@ -28,7 +28,7 @@ export default function Navbar() {
 
           {/* BRAND TEXT LOGO LINK */}
           <div className="flex-shrink-0">
-            <Link to="/" className="font-display text-xl font-bold tracking-[0.25em] text-black hover:text-tassar-madderRed transition-colors">
+            <Link to="/" className="font-display text-xl font-bold tracking-[0.12em] text-black hover:text-tassar-madderRed transition-colors">
               SIDDESHWARA<span className="text-tassar-deepGold font-light">RURAL MART</span>
             </Link>
           </div>
