@@ -1,10 +1,7 @@
 body {
-  background: 
-    linear-gradient(90deg, rgba(74,62,61,0.03) 1px, transparent 1px),
-    linear-gradient(0deg, rgba(74,62,61,0.03) 1px, transparent 1px),
-    linear-gradient(135deg, var(--color-tassar-cream) 0%, var(--color-tassar-raw) 100%);
-  background-size: 4px 4px, 4px 4px, 100% 100%; /* Creates a micro-weave texture */
-  color: var(--color-tassar-earth);
+  /* Using the exact hex codes directly ensures it works instantly without relying on the compiler */
+  background-color: #FBF9F5 !important; /* This is your beautiful tassar-cream */
+  color: #4A3E3D !important;            /* This is your tassar-earth */
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
