@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --color-tassar-raw: #E6D5B8;
+  --color-tassar-earth: #4A3E3D;
+  --color-tassar-deepGold: #C5A059;
+  --color-tassar-madderRed: #8B2635;
+  --color-tassar-cream: #FBF9F5;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  /* Using the exact hex codes directly ensures it works instantly without relying on the compiler */
-  background-color: #FBF9F5 !important; /* This is your beautiful tassar-cream */
-  color: #4A3E3D !important;            /* This is your tassar-earth */
+  /* Using exact hex codes directly to prevent it from going blank, while keeping your colors */
+  background: linear-gradient(135deg, #FBF9F5 0%, #E6D5B8 100%) !important; 
+  color: #4A3E3D !important;            
   font-family: 'Plus Jakarta Sans', sans-serif;
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
