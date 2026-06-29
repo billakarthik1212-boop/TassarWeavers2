@@ -14,7 +14,7 @@ export default function Cart() {
   // =========================================================================
   // PRODUCTION ADMINISTRATIVE ROUTING NODE
   // =========================================================================
-  const ADMIN_WHATSAPP_NUMBER = '919505610080'; // Your exact target cluster smartphone lines
+  const ADMIN_WHATSAPP_NUMBER = '919603903021'; // Your exact target cluster smartphone lines
 
   const handleFormChange = (e) => {
     setShippingForm({ ...shippingForm, [e.target.name]: e.target.value });
@@ -52,7 +52,7 @@ export default function Cart() {
       }).join('\n\n');
 
       // 3. SECURE HIGH-END TEXT INVOICE FORMATTING
-      const whatsappText = `✦ TASSARWEAVERS - NEW HANDLOOM INVOICE ✦\n` +
+      const whatsappText = `✦ SIDDESHWARA RURAL MART INVOICE ✦\n` +
                            `====================================\n\n` +
                            `📦 ORDER METADATA:\n` +
                            `• Order ID: ${generatedId}\n` +
