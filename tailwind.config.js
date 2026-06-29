@@ -4,15 +4,15 @@ module.exports = {
     extend: {
       colors: {
         mart: {
-          dark: '#0A1A1A',     // Replace with your actual hex
-          emerald: '#10B981',  // Replace with your actual hex
-          stone: '#F5F5F4',    // Replace with your actual hex
-          soft: '#E7E5E4',     // Replace with your actual hex
+          dark: 'var(--color-mart-dark)',
+          emerald: 'var(--color-mart-emerald)',
+          stone: 'var(--color-mart-stone)',
+          soft: 'var(--color-mart-soft)',
         },
       },
       fontFamily: {
-        display: ['YourDisplayFont', 'serif'],
-        sans: ['YourSansFont', 'sans-serif'],
+        display: ['var(--font-display)'],
+        sans: ['var(--font-sans)'],
       },
     },
   },
