@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { FiShoppingBag, FiCheckCircle, FiXCircle, FiImage, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { FiShoppingBag, FiImage } from 'react-icons/fi';
 import { getLiveCatalog } from './AdminDashboard';
 import { useCart } from '../context/CartContext';
 
@@ -12,7 +12,7 @@ export default function Shop() {
   const routerLocation = useLocation();
   const navigate = useNavigate();
 
-  const [carouselIndices, setCarouselIndices] = useState({});
+  const [carouselIndices] = useState({});
   const [highlightedId, setHighlightedId] = useState(null);
 
   const allowedCategories = ["Sarees", "Plain Cloth", "Shawls", "Dhoti Pancha"];
@@ -60,7 +60,6 @@ export default function Shop() {
         <p className="text-base text-mart-dark/70 font-sans mt-2 max-w-xl">Authentic creations crafted with precision by our local weaving clusters.</p>
       </header>
 
-      {/* FILTER RIBBON */}
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <div className="flex flex-row overflow-x-auto gap-3 border-b border-mart-soft pb-2 scrollbar-hide">
           <button onClick={() => { setSelectedCategory('All'); setHighlightedId(null); }} className={`px-5 py-2.5 text-xs font-bold tracking-widest uppercase transition-all shrink-0 ${selectedCategory === 'All' ? 'bg-mart-dark text-mart-stone' : 'text-mart-dark hover:bg-mart-soft'}`}>
@@ -74,7 +73,6 @@ export default function Shop() {
         </div>
       </div>
 
-      {/* HORIZONTAL PRODUCT SCROLL */}
       <main className="max-w-6xl mx-auto px-6">
         <AnimatePresence mode="wait">
           {filteredProducts.length === 0 ? (
@@ -108,5 +106,4 @@ export default function Shop() {
       </main>
     </motion.div>
   );
-}
 }
