@@ -446,9 +446,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ========================================================================= */}
       {/* 7. HIGH-END RESPONSIVE EDITORIAL FOOTER SECTION */}
-      {/* ========================================================================= */}
       <footer className="bg-tassar-earth text-tassar-cream pt-16 pb-8 px-6 border-t border-tassar-raw/20 overflow-hidden">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 pb-12 border-b border-white/10">
           
@@ -461,13 +459,13 @@ export default function Home() {
             </div>
 
             <div className="space-y-3.5 text-sm font-light">
-              <a href="tel:+919505610080" className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5">
+              <a href="tel:+919603903021" className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5">
                 <FiPhone className="text-tassar-raw group-hover:text-tassar-deepGold shrink-0" />
-                <span>+91 95056 10080</span>
+                <span>+91 96039 03021</span>
               </a>
 
               <a
-                href="https://wa.me/919505610080?text=Hello%20Siddeshwara%20Rural%20Mart,%20I'd%20like%20to%20inquire%20about%20your%20handloom%20masterpieces."
+                href="https://wa.me/919603903021?text=Hello%20Siddeshwara%20Rural%20Mart,%20I'd%20like%20to%20inquire%20about%20your%20handloom%20masterpieces."
                 target="_blank" rel="noopener noreferrer"
                 className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5 text-tassar-deepGold font-medium tracking-wide underline underline-offset-4 decoration-tassar-deepGold/40"
               >
@@ -511,7 +509,6 @@ export default function Home() {
           </Link>
         </div>
       </footer>
-      {/* ========================================================================= */}
 
     </motion.div>
   );
