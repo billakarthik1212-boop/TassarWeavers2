@@ -23,26 +23,26 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b bg-tassar-cream/80 backdrop-blur-md border-tassar-earth/10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20 gap-2">
 
-          {/* BRAND LOGO */}
-          <div className="flex-shrink-0">
+          {/* RESPONSIVE BRAND LOGO */}
+          <div className="flex-shrink-0 max-w-[50%] md:max-w-none">
             <Link 
               to="/" 
-              className="font-display text-xl font-bold tracking-[0.15em] text-black hover:text-tassar-madderRed transition-colors"
+              className="font-display text-base sm:text-lg lg:text-xl font-bold tracking-[0.12em] lg:tracking-[0.15em] text-black hover:text-tassar-madderRed transition-colors block md:inline"
             >
-              SIDDESHWARA <span className="text-tassar-deepGold font-light">RURAL MART</span>
+              SIDDESHWARA <span className="text-tassar-deepGold font-light block lg:inline">RURAL MART</span>
             </Link>
           </div>
 
           {/* DESKTOP NAVIGATION */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
             {navigationLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-xs uppercase tracking-widest transition-colors font-bold ${
+                className={`text-[10px] lg:text-xs uppercase tracking-widest transition-colors font-bold whitespace-nowrap ${
                   isActivePath(link.path)
                     ? 'text-tassar-madderRed font-black'
                     : 'text-black hover:text-tassar-madderRed'
@@ -54,7 +54,7 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP SHOPPING BAG */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center flex-shrink-0">
             <Link
               to="/cart"
               className="relative p-2.5 text-black hover:text-tassar-madderRed transition-colors border border-transparent hover:border-tassar-raw/20 bg-white shadow-sm rounded-none"
@@ -70,7 +70,7 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE TOGGLE & SHORTCUTS */}
-          <div className="flex md:hidden items-center gap-4">
+          <div className="flex md:hidden items-center gap-2 sm:gap-4 flex-shrink-0">
             <Link to="/cart" className="relative p-2 text-black" title="Open Shopping Basket">
               <FiShoppingBag className="text-xl text-black" />
               {totalCartItemsCount > 0 && (
