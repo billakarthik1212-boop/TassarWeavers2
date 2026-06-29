@@ -474,9 +474,9 @@ export default function Home() {
                 <span>WhatsApp Us Directly</span>
               </a>
 
-              <a href="mailto:saiganeshmanyam18@gmail.com" className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5">
+              <a href="mailto:haridevaganhs08@gmail.com" className="flex items-center gap-3 hover:text-tassar-deepGold transition-colors group py-0.5">
                 <FiMail className="text-tassar-raw group-hover:text-tassar-deepGold shrink-0" />
-                <span>saiganeshmanyam18@gmail.com</span>
+                <span>haridevaganhs08@gmail.com</span>
               </a>
 
               <div className="flex items-start gap-3 py-0.5 leading-relaxed text-tassar-cream/80">
@@ -488,10 +488,10 @@ export default function Home() {
 
           <div className="lg:col-span-7 w-full h-[240px] sm:h-[280px] bg-white/5 border border-white/10 relative shadow-md">
             <iframe
-              title="Manikanta Handlooom Tassar Sarees Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3778.453616693124!2d79.97577757492245!3d18.733264562643207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a32f1002b930375%3A0xcdf79576689beb3e!2sManikanta%20Tasser%20sarees!5e0!3m2!1sen!2sin!4v1782622715701!5m2!1sen!2sin"
+              title="SIDDESWARA HANDLOOM COOPERATIVE SOCIETY Location Map"
+              src=
               className="w-full h-full border-0 opacity-85 invert-[0.92] hue-rotate-[185deg] brightness-[0.88] contrast-[1.12]"
-              allowFullScreen=""
+              allowFullScreen="https://maps.app.goo.gl/DTMm9SU7Pk5GQ3u67"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
             />
