@@ -3,11 +3,11 @@
 @import 'tailwindcss';
 
 @theme {
-  --color-tassar-pink: #F3D1D4;      /* A soft, traditional pink */
-  --color-tassar-blush: #E8B4B8;     /* A slightly deeper blush pink */
-  --color-tassar-earth: #4A3E3D;
-  --color-tassar-madderRed: #8B2635;
-  --color-tassar-cream: #FBF9F5;
+  /* Updated to your Midnight & Emerald theme */
+  --color-mart-dark: #0A1A1A;
+  --color-mart-emerald: #10B981;
+  --color-mart-stone: #F5F5F4;
+  --color-mart-soft: #E7E5E4;
 
   --font-display: "Playfair Display", Georgia, serif;
   --font-sans: "Plus Jakarta Sans", Inter, sans-serif;
@@ -18,10 +18,10 @@ html {
 }
 
 body {
-  /* Smooth gradient transitioning from your elegant cream into the soft pink */
-  background: linear-gradient(135deg, #FBF9F5 0%, #F3D1D4 100%) !important; 
-  color: #4A3E3D !important;            
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  /* Updated background to match the new theme */
+  background-color: var(--color-mart-stone) !important;
+  color: var(--color-mart-dark) !important;
+  font-family: var(--font-sans);
   overflow-x: hidden;
   min-height: 100vh;
 }
